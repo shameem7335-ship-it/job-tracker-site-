@@ -56,36 +56,9 @@ function showOnly(id){
     else if(id === 'no-card2'){
         rejectedBtn.classList.add('bg-blue-500', 'text-white')
     }
-    // --empty page addd---
-   const emptyJob = document.getElementById(job-empty);
+  
 
-   if (show.children.length ===0){
-      emptyJob.classList.remove('hidden');
-   }
-   else { emptyJob.classList.add('hidden');}
-
-
-
-    //  const emptyJob = document.getElementById('job-empty');
-
-    //  const allCardEmpty = document.getElementById('all-card').children.length;
-    //  const noCardEmpty = document.getElementById('no-card').children.length;
-    //  const noCard2Empty = document.getElementById('no-card2').children.length;
-
-    //  if(allCardEmpty === 0){
-    //     emptyJob.classList.remove('hidden');
-    // }
-    //  else {emptyJob.classList.add('hidden')}
-    //  if(noCardEmpty === 0){
-    //     emptyJob.classList.remove('hidden');
-    //  }
-    //  else {emptyJob.classList.add('hidden')}
-
-    //  if(noCard2Empty === 0){
-    //     emptyJob.classList.remove('hidden');
-    //  }
-    //  else {emptyJob.classList.add('hidden')}
-    
+    checkEmpty();
   };
 
 
@@ -131,9 +104,8 @@ mainContainer.addEventListener('click', function(event){
        if(apllied){ apllied.innerText = 'Selected';}
        
 
-        calculateCount()
-        emptypage();
-        return;
+        calculateCount();
+        checkEmpty();
     }
     
     else if(event.target.classList.contains('Rejectedf')){
@@ -149,9 +121,9 @@ mainContainer.addEventListener('click', function(event){
        const apllied = aplliedBtn.querySelector('.applied');
        if(apllied){ apllied.innerText = 'Rejected';}
            
-       calculateCount()
-       emptypage();
-       return;
+       calculateCount();
+      checkEmpty();
+       
     
     };
     
@@ -160,20 +132,13 @@ mainContainer.addEventListener('click', function(event){
 
 
 // -----empty job section -------
-// function emptypage(){
-//      const emptyJob = document.getElementById('job-empty');
-
-//      const allCardEmpty = document.getElementById('all-card').children.length;
-//      const noCardEmpty = document.getElementById('no-card').children.length;
-//      const noCard2Empty = document.getElementById('no-card2').children.length;
-    
-//     if(allCardEmpty === 0 && noCardEmpty === 0 && noCard2Empty === 0){
-//         emptyJob.classList.remove('hidden')
-//     }
-//     else  {emptyJob.classList.add('hidden')}
-
-// }
-// emptypage();
+function checkEmpty(){
+    const visible = [allCard, noCard, noCard2].find(sec => !sec.classList.contains('hidden'));
+    if(visible && visible.children.length===0){
+        document.getElementById('job-empty').classList.remove('hidden');
+    }
+    else{ document.getElementById('job-empty').classList.add('hidden')}
+}
  
 
 
@@ -190,6 +155,6 @@ document.addEventListener('click', function(event){
 
 })
 
+// -----
 // ----------
-// --------
-// --------
+// ---------
