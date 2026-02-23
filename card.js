@@ -104,7 +104,7 @@ mainContainer.addEventListener('click', function(event){
 
     const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
-       if(apllied) apllied.innerText = 'Selected';
+       if(apllied){ apllied.innerText = 'Selected';}
         // if(event.target.classList.contains('applied')){
         //     const appli = event.target;
         //     appli.innerText = 'Selected'}
@@ -124,7 +124,7 @@ mainContainer.addEventListener('click', function(event){
 
         const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
-       if(apllied) apllied.innerText = 'Rejected';
+       if(apllied){ apllied.innerText = 'Rejected';}
            
 
     calculateCount()
