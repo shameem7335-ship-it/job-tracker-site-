@@ -9,57 +9,84 @@ function showOnly(id){
 
     console.log(id ,' button clicked')
 
-    forAllBtn.classList.add('hidden')
-    forSelectedBtn.classList.add('hidden')
-    forRejectedBtn.classList.add('hidden')
+    forAllBtn.classList.add('hidden');
+    forSelectedBtn.classList.add('hidden');
+    forRejectedBtn.classList.add('hidden');
 
 
     const show = document.getElementById(id);
     show.classList.remove('hidden');
-       
 
 
     const jobCount = document.getElementById('counts');
+    
      if(id === 'all-card'){
+         calculateCount();
         jobCount.innerText = allCard.children.length;
-        calculateCount();
     }
     else if(id === 'no-card'){
-        jobCount.innerText = noCard.children.length;
         calculateCount();
+        jobCount.innerText = noCard.children.length;
     }
     else if(id === 'no-card2'){
-        jobCount.innerText = noCard2.children.length;
         calculateCount();
+        jobCount.innerText = noCard2.children.length;
     }
 
     
-    // if(id === 'all-card'){
-    //     jobCount.innerText = allCard.children.length;
-    //     calculateCount();
-    // }
-    // else if(id === 'no-card'){
-    //     jobCount.innerText = noCard.children.length;
-    //     calculateCount();
-    // }
-    // else if(id === 'no-card2'){
-    //     jobCount.innerText = noCard2.children.length;
-    //     calculateCount();
-    // }
-
+   
     // // //----- buttone style-----
-    //  const allBtn = document.getElementById('all-btn')
-    // const selectedBtn = document.getElementById('selected-btn')
-    // const rejectedBtn = document.getElementById('rejected-btn')
-    // console.log(allBtn, selectedBtn, rejectedBtn);
+
+     const allBtn = document.querySelector('.first-btn')
+    const selectedBtn = document.getElementById('selected-btn')
+    const rejectedBtn = document.getElementById('rejected-btn')
+    console.log(allBtn, selectedBtn, rejectedBtn);
 
     
-    // selectedBtn.classList.remove('bg-blue-400', 'text-white')
-    // rejectedBtn.classList.remove('bg-blue-400', 'text-white')
-    // allBtn.classList.remove('bg-blue-400', 'text-white')
+    selectedBtn.classList.remove('btn-soft', 'bg-blue-500', 'text-white');
+    rejectedBtn.classList.remove('btn-soft', 'bg-blue-500', 'text-white');
+    allBtn.classList.remove('btn-soft', 'bg-blue-500', 'text-white');
+
+    if(id === 'all-card'){
+        allBtn.classList.add('bg-blue-500', 'text-white')
+    }
+    else if(id === 'no-card'){
+       selectedBtn.classList.add('bg-blue-500', 'text-white')
+    }
+    else if(id === 'no-card2'){
+        rejectedBtn.classList.add('bg-blue-500', 'text-white')
+    }
+    // --empty page addd---
+   const emptyJob = document.getElementById(job-empty);
+
+   if (show.children.length ===0){
+      emptyJob.classList.remove('hidden');
+   }
+   else { emptyJob.classList.add('hidden');}
+
+
+
+    //  const emptyJob = document.getElementById('job-empty');
+
+    //  const allCardEmpty = document.getElementById('all-card').children.length;
+    //  const noCardEmpty = document.getElementById('no-card').children.length;
+    //  const noCard2Empty = document.getElementById('no-card2').children.length;
+
+    //  if(allCardEmpty === 0){
+    //     emptyJob.classList.remove('hidden');
+    // }
+    //  else {emptyJob.classList.add('hidden')}
+    //  if(noCardEmpty === 0){
+    //     emptyJob.classList.remove('hidden');
+    //  }
+    //  else {emptyJob.classList.add('hidden')}
+
+    //  if(noCard2Empty === 0){
+    //     emptyJob.classList.remove('hidden');
+    //  }
+    //  else {emptyJob.classList.add('hidden')}
     
-    // btn.classList.add('bg-blue-400', 'text-white'
-}
+  };
 
 
 // --------count change------
@@ -97,20 +124,16 @@ mainContainer.addEventListener('click', function(event){
     const  selectedCard = document.getElementById('no-card');
     selectedCard.appendChild(parentNode);
 
-    // const apllied = document.getElementsByClassName('applied');
-    // for(const apllie of apllied){
-    //     apllie.innerText = 'Selected'
-    // }
+   
 
     const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
        if(apllied){ apllied.innerText = 'Selected';}
-        // if(event.target.classList.contains('applied')){
-        //     const appli = event.target;
-        //     appli.innerText = 'Selected'}
+       
 
-
-    calculateCount()
+        calculateCount()
+        emptypage();
+        return;
     }
     
     else if(event.target.classList.contains('Rejectedf')){
@@ -126,35 +149,32 @@ mainContainer.addEventListener('click', function(event){
        const apllied = aplliedBtn.querySelector('.applied');
        if(apllied){ apllied.innerText = 'Rejected';}
            
-
-    calculateCount()
+       calculateCount()
+       emptypage();
+       return;
     
     };
     
 });
 
 
-// ----selected and rejected empty ----
-// const selectedPage = document.getElementById('no-card');
-// const selectedEmpty = document.getElementById('selected-empty')
-// function empty(){
-// if(selectedPage.children.length === 0){
-//     selectedEmpty.classList.remove('hidden')
-//    }
-//     else if(selectedPage.children.length !== 0){
-//          selectedEmpty.classList.add('hidden') ;}}
 
+// -----empty job section -------
+// function emptypage(){
+//      const emptyJob = document.getElementById('job-empty');
 
+//      const allCardEmpty = document.getElementById('all-card').children.length;
+//      const noCardEmpty = document.getElementById('no-card').children.length;
+//      const noCard2Empty = document.getElementById('no-card2').children.length;
+    
+//     if(allCardEmpty === 0 && noCardEmpty === 0 && noCard2Empty === 0){
+//         emptyJob.classList.remove('hidden')
+//     }
+//     else  {emptyJob.classList.add('hidden')}
 
-// mainContainer.addEventListener('click', function(event){
-// if(event.target.classList.contains('selectedf')){
-
-//     const parentN = event.target.closest('.shadow-md');
-//     if(!parentN){return};=
-//     selectedPage.appendChild(parentN);
-//     empty(); 
-// }})
-
+// }
+// emptypage();
+ 
 
 
 // -------delete button------
@@ -164,8 +184,12 @@ document.addEventListener('click', function(event){
     const cardDlt = deleteBtn.closest('.shadow-md');
     cardDlt.remove();
 
-
     calculateCount();
+    emptypage();
+    return;
 
 })
 
+// ----------
+// --------
+// --------
