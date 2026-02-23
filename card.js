@@ -157,4 +157,15 @@ mainContainer.addEventListener('click', function(event){
 
 
 
+// -------delete button------
+document.addEventListener('click', function(event){
+    const deleteBtn =event.target.closest('.dlt');
+    // if(event.target.classList.contains('dlt')){}
+    const cardDlt = deleteBtn.closest('.shadow-md');
+    cardDlt.remove();
+
+
+    calculateCount();
+
+})
 
