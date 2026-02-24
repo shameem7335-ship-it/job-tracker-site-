@@ -90,14 +90,19 @@ mainContainer.addEventListener('click', function(event){
     if(event.target.classList.contains('selectedf')){
     const node = event.target;
     console.log(node.innerText);
-    const parentNode = event.target.parentNode;
+    const parentNode = event.target.parentNode; 
+    const cardID = parentNode.id;
     console.log(parentNode);
     
-    
-    const  selectedCard = document.getElementById('no-card');
-    selectedCard.appendChild(parentNode.cloneNode(true));
+     const  rejectCard = document.getElementById('no-card2');
+     const duplicate = rejectCard.querySelector(`#${cardID}`);
+     if(duplicate) rejectCard.removeChild(duplicate);
 
-    const aplliedBtn = event.target.parentNode
+    const  selectedCard = document.getElementById('no-card');
+     if(!selectedCard.querySelector(`#${cardID}`)){
+    selectedCard.appendChild(parentNode.cloneNode(true));}
+
+       const aplliedBtn = event.target.parentNode;
        const apllied = aplliedBtn.querySelector('.applied');
        if(apllied){ apllied.innerText = 'Selected';}
        
@@ -110,10 +115,16 @@ mainContainer.addEventListener('click', function(event){
     const node = event.target;
     console.log(node.innerText);
     const parentNode = event.target.parentNode;
+    const cardID = parentNode.id;
     console.log(parentNode);
-    
+
+     const  selectedCard = document.getElementById('no-card');
+     const duplicate = selectedCard.querySelector(`#${cardID}`);
+     if(duplicate) selectedCard.removeChild(duplicate);
+
     const  rejectCard = document.getElementById('no-card2');
-    rejectCard.appendChild(parentNode.cloneNode(true));
+    if(!rejectCard.querySelector(`#${cardID}`)){
+    rejectCard.appendChild(parentNode.cloneNode(true));}
 
         const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
@@ -152,6 +163,6 @@ document.addEventListener('click', function(event){
     return;
 
 })
-// -----------
-// ----------
 // ------
+// -------
+// ---------
