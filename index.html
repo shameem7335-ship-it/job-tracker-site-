@@ -34,7 +34,7 @@
          <h1 class="text-[#002C5C] font-bold text-xl">Available Jobs</h1>
         <div class="text-[#323B49]"><span id="counts">8</span> jobs</div>
        </div>
-       <div class="grid grid-cols-1 sm:flex gap-2"><button id="all-btn " onclick="showOnly('all-card', this)" class="first-btn btn btn-soft ">All</button>
+       <div class="grid grid-cols-1 sm:flex gap-2"><button id="all-btn " onclick="showOnly('all-card', this)" class="first-btn btn btn-soft bg-blue-500 text-white">All</button>
        <button id="selected-btn" onclick="showOnly('no-card', this)" class="btn btn-soft ">Interview</button>
        <button id="rejected-btn" onclick="showOnly('no-card2', this)" class="btn btn-soft ">Rejected</button>
     </div>
@@ -177,20 +177,19 @@
     </div>
         <div id="rejected-card"></div>
 
-        <!-- empty job section -->
-     <section id="job-empty" class="hidden">
-      <div  class=" text-center shadow-sm  py-30">
-            <img class="mx-auto" src="./jobs.png" alt="">
-         <h1 class="text-[#002C5C] font-bold ">No jobs available</h1>
-         <p class="text-[#323B49]">Check back soon for new job opportunities</p>
-        </div>
-     </section>
-
-    </section>
+      </section>
+      <!-- empty job section -->
+   <section id="job-empty" class="hidden">
+    <div  class=" text-center shadow-sm py-30">
+          <img class="mx-auto" src="./jobs.png" alt="">
+       <h1 class="text-[#002C5C] font-bold ">No jobs available</h1>
+       <p class="text-[#323B49]">Check back soon for new job opportunities</p>
+      </div>
+   </section>
 
     <script src="card.js"></script>
 </body>
 </html>
-<!-- ----- -->
- <!-- ----- -->
-  <!-- ---- -->
+<!-- ---- -->
+ <!-- ---------- -->
+  <!-- -------- -->

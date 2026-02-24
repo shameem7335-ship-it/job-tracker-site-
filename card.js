@@ -95,9 +95,7 @@ mainContainer.addEventListener('click', function(event){
     
     
     const  selectedCard = document.getElementById('no-card');
-    selectedCard.appendChild(parentNode);
-
-   
+    selectedCard.appendChild(parentNode.cloneNode(true));
 
     const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
@@ -115,7 +113,7 @@ mainContainer.addEventListener('click', function(event){
     console.log(parentNode);
     
     const  rejectCard = document.getElementById('no-card2');
-    rejectCard.appendChild(parentNode)
+    rejectCard.appendChild(parentNode.cloneNode(true))
 
         const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
@@ -154,7 +152,6 @@ document.addEventListener('click', function(event){
     return;
 
 })
-
-// -----
+// -----------
 // ----------
-// ----------
+// ------
