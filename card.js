@@ -103,7 +103,7 @@ mainContainer.addEventListener('click', function(event){
     const newClonecard = selectedCard.appendChild(parentNode.cloneNode(true));
      
     const apllied = newClonecard.querySelector('.applied');
-       if(apllied){ apllied.innerText = 'Selected';}
+       if(apllied){ apllied.innerText = 'Interview';}
        
    
     }
@@ -115,7 +115,7 @@ mainContainer.addEventListener('click', function(event){
 
        const aplliedBtn = event.target.parentNode;
        const apllied = aplliedBtn.querySelector('.applied');
-       if(apllied){ apllied.innerText = 'Selected';}
+       if(apllied){ apllied.innerText = 'Interview';}
        
 
         calculateCount();
