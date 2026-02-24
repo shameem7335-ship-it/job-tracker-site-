@@ -100,7 +100,18 @@ mainContainer.addEventListener('click', function(event){
 
     const  selectedCard = document.getElementById('no-card');
      if(!selectedCard.querySelector(`#${cardID}`)){
-    selectedCard.appendChild(parentNode.cloneNode(true));}
+    const newClonecard = selectedCard.appendChild(parentNode.cloneNode(true));
+     
+    const apllied = newClonecard.querySelector('.applied');
+       if(apllied){ apllied.innerText = 'Selected';}
+       
+   
+    }
+
+    //  const cloneCard = parentNode.cloneNode(true);
+    //  const apllied = cloneCard.querySelector('.applied');
+    //  if(apllied){apllied.innerText='Selected'};
+    //  selectedCard.appendChild(cloneCard);
 
        const aplliedBtn = event.target.parentNode;
        const apllied = aplliedBtn.querySelector('.applied');
@@ -124,7 +135,19 @@ mainContainer.addEventListener('click', function(event){
 
     const  rejectCard = document.getElementById('no-card2');
     if(!rejectCard.querySelector(`#${cardID}`)){
-    rejectCard.appendChild(parentNode.cloneNode(true));}
+    const newClonecard = rejectCard.appendChild(parentNode.cloneNode(true));
+     
+    const apllied = newClonecard.querySelector('.applied');
+       if(apllied){ apllied.innerText = 'Rejected';}
+
+ 
+   }
+        
+
+    // const cloneCard = parentNode.cloneNode(true);
+    //  const apllied = cloneCard.querySelector('.applied');
+    //  if(apllied){apllied.innerText='Rejected'};
+    //  rejectCard.appendChild(cloneCard)
 
         const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
@@ -163,6 +186,6 @@ document.addEventListener('click', function(event){
     return;
 
 })
-// ------
-// -------
 // ---------
+// -------
+// ----------
