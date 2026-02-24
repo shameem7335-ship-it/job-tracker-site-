@@ -113,7 +113,7 @@ mainContainer.addEventListener('click', function(event){
     console.log(parentNode);
     
     const  rejectCard = document.getElementById('no-card2');
-    rejectCard.appendChild(parentNode.cloneNode(true))
+    rejectCard.appendChild(parentNode.cloneNode(true));
 
         const aplliedBtn = event.target.parentNode
        const apllied = aplliedBtn.querySelector('.applied');
