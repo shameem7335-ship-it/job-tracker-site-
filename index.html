@@ -12,7 +12,7 @@
     <!-- header section -->
     <header class="w-10/12 mx-auto space-y-9 pt-9">
          <h1 class="text-[#002C5C] font-bold text-2xl">Job Application Tracker</h1>
-         <div class="grid grid-cols-3 justify-between gap-5">
+         <div class="grid grid-cols-1 sm:grid-cols-3 justify-between gap-5">
             <div class="shadow-sm p-5 space-y-1 bg-white rounded-lg">
             <p class="text-[#323B49]">Total</p>
             <p id="total-count" class="font-bold">0</p>
@@ -29,12 +29,12 @@
 
     </header>
  <!-- avalible section -->
-<section id="all-btn"  class=" w-10/12 mx-auto space-y-9 pt-9">
+<section id="all-btn"  class=" w-10/12 mx-auto space-y-9 pt-9 ">
       <div class="flex justify-between  ">
          <h1 class="text-[#002C5C] font-bold text-xl">Available Jobs</h1>
         <div class="text-[#323B49]"><span id="counts">8</span> jobs</div>
        </div>
-       <div><button id="all-btn " onclick="showOnly('all-card', this)" class="first-btn btn btn-soft ">All</button>
+       <div class="grid grid-cols-1 sm:flex gap-2"><button id="all-btn " onclick="showOnly('all-card', this)" class="first-btn btn btn-soft ">All</button>
        <button id="selected-btn" onclick="showOnly('no-card', this)" class="btn btn-soft ">Interview</button>
        <button id="rejected-btn" onclick="showOnly('no-card2', this)" class="btn btn-soft ">Rejected</button>
     </div>
